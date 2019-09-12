@@ -13,6 +13,7 @@ pipeline {
     }
     stage('Install Packages') {
       steps {
+          echo 'Install npm package'
 //        sh 'npm install'
       }
     }
@@ -20,11 +21,13 @@ pipeline {
       parallel {
         stage('Run Tests') {
           steps {
+              echo 'Run test'
 //            sh 'npm run test'
           }
         }
         stage('Create Build Artifacts') {
           steps {
+              echo 'Run build'
 //            sh 'npm run build'
           }
         }
