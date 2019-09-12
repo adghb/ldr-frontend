@@ -22,6 +22,6 @@ node('master') {
     task'Deploy'
     echo'Deploy'
     
- }
+    }
 
- 
+}  
