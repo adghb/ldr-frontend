@@ -2,7 +2,7 @@ node('master') {
 	
     stage('DEV'){
 
-    task 'SCM Checkout'
+//    task 'SCM Checkout'
     echo 'SCM Checkout'
     
     git branch: 'master',
@@ -10,16 +10,16 @@ node('master') {
     url: 'https://github.com/adghb/ldr-frontend.git'
 
 
-    task 'Unit Test'
+//    task 'Unit Test'
     echo 'Unit Test'
 
 
-    task 'Build'
+//    task 'Build'
     echo 'Build'
-    sleep 3
+//    sleep 3
     
   
-    task 'Deploy'
+//    task 'Deploy'
     echo 'Deploy'
     
     }
