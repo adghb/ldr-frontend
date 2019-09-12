@@ -36,9 +36,9 @@ pipeline {
     stage('Deployment') {
       parallel {
         stage('Staging') {
-          when {
-            branch 'master'
-          }
+//          when {
+//            branch 'master'
+//          }
           steps {
             withAWS(region:'ap-south-1',credentials:'awsCredentials') {
               s3Delete(bucket: 'adweb', path:'**/*')
