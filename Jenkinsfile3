@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent master
 
   stages {
 
@@ -29,8 +29,8 @@ pipeline {
 //         sh 'npm run build'
           }
         }
-      }
-    }
+//      }
+//    }
     stage('Deployment') {
 //      parallel {
 //        stage('Staging') {
