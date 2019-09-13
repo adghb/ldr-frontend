@@ -1,0 +1,52 @@
+pipeline {
+  agent any
+
+  stages {
+
+    stage('SCM Checkout') {
+      steps {
+        git branch: 'master',
+        credentialsId: 'tfadghb',
+        url: 'https://github.com/adghb/ldr-frontend.git'
+
+      }
+    }
+    stage('Install Packages') {
+      steps {
+          echo 'Install npm package'
+//        sh 'npm install'
+      }
+    }
+     stage('Run Tests') {
+      steps {
+           echo 'Run test'
+//         sh 'npm run test'
+       }
+     }
+     stage('Create Build Artifacts') {
+      steps {
+           echo 'Run build'
+//         sh 'npm run build'
+          }
+        }
+      }
+    }
+    stage('Deployment') {
+//      parallel {
+//        stage('Staging') {
+//          when {
+//            branch 'master'
+//          }
+          steps {
+            withAWS(region:'ap-south-1',credentials:'awsCredentials') {
+              s3Delete(bucket: 'adweb', path:'**/*')
+              s3Upload(bucket: 'adweb', workingDir:'build', includePathPattern:'**/*');
+            }
+//            mail(subject: 'Staging Build', body: 'New Deployment to Staging', to: 'jenkins-mailing-list@mail.com')
+          }
+        }
+        
+      }
+    }
+//  }
+// }
