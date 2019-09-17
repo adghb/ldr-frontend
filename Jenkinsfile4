@@ -100,8 +100,8 @@ parameters {
 
       steps {
             withAWS(region:'ap-south-1',credentials:'awsCredentials') {
-            s3Delete(bucket: 'adweb', path:'**/*')
-            s3Upload(bucket: 'adweb', workingDir:'build', includePathPattern:'**/*');
+            s3Delete(bucket: 'leadrweb', path:'**/*')
+            s3Upload(bucket: 'leadrweb', workingDir:'build', includePathPattern:'**/*');
             }
 //            mail(subject: 'dev Build', body: 'New Deployment to dev', to: 'jenkins-mailing-list@leadr.com')
           }
