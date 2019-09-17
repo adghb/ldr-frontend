@@ -90,7 +90,7 @@ parameters {
    stage('Push Package to S3') {
       steps {
       
-     sh "aws s3 cp example.zip s3://tf-sls-example/dev/v1.0.0/example.zip"
+     sh "aws s3 cp build/* s3://tf-sls-example/dev/v1.0.0/"
 
      }
   }
@@ -98,13 +98,14 @@ parameters {
 
     stage('Deployment') {
 
-      steps {
+/*      steps {
             withAWS(region:'ap-south-1',credentials:'awsCredentials') {
             s3Delete(bucket: 'leadrweb', path:'**/*')
             s3Upload(bucket: 'leadrweb', workingDir:'build', includePathPattern:'**/*');
             }
 //            mail(subject: 'dev Build', body: 'New Deployment to dev', to: 'jenkins-mailing-list@leadr.com')
           }
+*/          
         }
      
       }
