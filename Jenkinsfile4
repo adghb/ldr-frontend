@@ -97,8 +97,10 @@ parameters {
     
 
     stage('Deployment') {
-
+        steps {
          
+        }
+        
         }
      
       }
