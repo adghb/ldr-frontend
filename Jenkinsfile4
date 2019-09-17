@@ -104,8 +104,7 @@ parameters {
             s3Upload(bucket: 'leadrweb', workingDir:'build', includePathPattern:'**/*');
             }
 //            mail(subject: 'dev Build', body: 'New Deployment to dev', to: 'jenkins-mailing-list@leadr.com')
-          }
-*/          
+          } */          
         }
      
       }
