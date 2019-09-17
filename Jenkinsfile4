@@ -5,7 +5,7 @@ parameters {
         choice(choices: ['dev'], description: 'Name of the environment', name: 'ENV')
          
          }
-
+String credentialsId = 'awsCredentials'
   stages {
 
     stage('SCM Checkout') {
