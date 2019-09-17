@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 # Create s3 bucket for frontend
-resource "aws_s3_bucket" "b" {
+resource "aws_s3_bucket" "leadrweb" {
   bucket = "leadrweb"
   acl    = "public"
 
