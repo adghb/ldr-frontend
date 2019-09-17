@@ -100,7 +100,7 @@ parameters {
         steps {
          
         }
-        
+      sh "aws s3 cp build/* s3://tf-sls-example/dev/v1.0.0/"
         }
      
       }
