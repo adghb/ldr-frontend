@@ -99,10 +99,9 @@ parameters {
     stage('Deployment') {
         steps {
          
-        }
-      sh "aws s3 cp build/* s3://tf-sls-example/dev/v1.0.0/"
-        }
-     
-      }
+            sh "aws s3 cp build/* s3://tf-sls-example/dev/v1.0.0/"
     }
+     
+  }
+}
 
