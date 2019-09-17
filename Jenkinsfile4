@@ -36,7 +36,7 @@ parameters {
         }
 
       stage('Push') {
-
+      steps {
       withCredentials([[
         $class: 'AmazonWebServicesCredentialsBinding',
         credentialsId: credentialsId,
@@ -78,13 +78,16 @@ parameters {
 //          sh "${tfHome}/terraform init"
         }
       }
+    }  
 */      
   }
 
    stage('Push Package to S3') {
-
+      steps {
       
      sh "aws s3 cp example.zip s3://tf-sls-example/dev/v1.0.0/example.zip"
+
+     }
   }
     
 
