@@ -7,7 +7,7 @@ provider "aws" {
 # Create s3 bucket for frontend
 resource "aws_s3_bucket" "leadrweb" {
   bucket = "leadrweb"
-  acl    = "public"
+  acl    = "public-read"
 
 /*  tags = {
     Name        = "My bucket"
