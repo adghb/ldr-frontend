@@ -36,7 +36,7 @@ parameters {
         }
 
       stage('Push') {
-    node {
+
       withCredentials([[
         $class: 'AmazonWebServicesCredentialsBinding',
         credentialsId: credentialsId,
@@ -48,9 +48,9 @@ parameters {
 //          sh "${tfHome}/terraform init"
         }
       }
-    }
 
-/*    node {
+
+/*    
       withCredentials([[
         $class: 'AmazonWebServicesCredentialsBinding',
         credentialsId: credentialsId,
@@ -63,9 +63,8 @@ parameters {
         sh "${tfHome}/terraform init"
         }
       }
-    }
 */
-    node {
+
       withCredentials([[
         $class: 'AmazonWebServicesCredentialsBinding',
         credentialsId: credentialsId,
@@ -78,14 +77,12 @@ parameters {
 //          sh "${tfHome}/terraform init"
         }
       }
-    }
   }
 
    stage('Push Package to S3') {
-    node {
+
       
      sh "aws s3 cp example.zip s3://tf-sls-example/dev/v1.0.0/example.zip"
-    }
   }
     
 
